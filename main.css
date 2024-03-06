@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Itim", cursive;
+}
+body {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
+    background: #e1bee7;
+}
+.container {
+    /* text-align: center; */
+    /* position: relative; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    /* gap: 30px; */
+    /* background: #ba68c8; */
+    /* padding: 40px 60px; */
+}
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 20px 0;
+    animation: textmove 5s ease-in-out infinite;
+}
+#list {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    list-style: none;
+    /* padding: 0px; */
+
+    li {
+        display: flex;
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+        padding: 20px;
+        /* gap: 10px; */
+        font-size: 1em;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: .3s;
+    }
+    li:hover {
+        color: red;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+.btn-add {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px;
+    border-radius: 100%;
+    
+}
+.form-add {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2em;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    
+    form {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        color: white;
+        backdrop-filter: blur(5px);
+        padding: 30px 20px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+    }
+
+    input[type=text],textarea {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 10px;
+        /* width: 100%; */
+    }
+    /* textarea {
+        font-size: 2em;
+    } */
+    button {
+        display: inline-block;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        backdrop-filter: blur(10px);
+        padding: 20px 40px;
+        margin: 10px;
+        transition: .3s;
+    }
+    button:hover {
+        cursor: pointer;
+        color: black;
+        border: 1px solid black;
+    }
+}
+.footer {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+@keyframes textmove {
+    0% { 
+        color: red; 
+    } 
+
+    25% { 
+        color: yellow; 
+    } 
+
+    50% { 
+        color: blue; 
+    } 
+
+    100% { 
+        color: green; 
+    } 
+}
+
+@media only screen and (min-width: 1200px) {
+    #list {
+       font-size: 1.7em;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #list {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media only screen and (max-width: 970px) {
+    #list {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media only screen and (max-width: 768px) {
+    #list {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media only screen and (max-width: 508px) {
+    #list {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
